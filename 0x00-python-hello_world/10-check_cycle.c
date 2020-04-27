@@ -9,7 +9,7 @@ int check_cycle(listint_t *list)
 	listint_t *tortuga = list;
 	listint_t *liebre = list;
 
-	while (tortuga != NULL && liebre != NULL)
+	while (tortuga != NULL && liebre != NULL && libre->next != NULL)
 	{
 		tortuga = tortuga->next;
 		liebre = liebre->next->next;
