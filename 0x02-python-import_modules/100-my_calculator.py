@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 from sys import argv, exit
-from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
-    if(len(argv) == 1):
+    from calculator_1 import add, sub, mul, div
+    if(len(argv) is not 4):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
     num1 = int(argv[1])
-    num2 = int(argv[3])
     operator = argv[2]
+    num2 = int(argv[3])
 
     if(operator == '+'):
         print("{} + {} = {}".format(num1, num2, add(num1, num2)))
