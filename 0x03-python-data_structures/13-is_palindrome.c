@@ -16,17 +16,17 @@ int is_palindrome(listint_t **head)
 
 
 
-	if ((!*head) || (*head)->next == NULL)
+	if (!*head || (*head)->next == NULL)
 		return (1);
 
 	while (palin)
 	{
 		buff[cnt_max] = palin->n;
-		palin = palin->next;
 		cnt_max++;
+		palin = palin->next;
 	}
 	cnt_max--;
-	while (cnt_max < cnt)
+	while (cnt_max > cnt)
 	{
 		if (buff[cnt_max] != buff[cnt])
 			return (0);
