@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * is_palindrome - Function that checks if a singly linked list is a palindrome.
+ * is_palindrome - Checks if a singly linked list is a palindrome.
  * @head: Head.
- * Return:
+ * Return: 1 if is a palindrome
  */
 
 int is_palindrome(listint_t **head)
@@ -14,9 +14,9 @@ int is_palindrome(listint_t **head)
 
 	palin = *head;
 
-	 if ((!*head) || (*head)->next == NULL)
-		return(1); 
-	
+	if ((!*head) || (*head)->next == NULL)
+		return (1);
+
 	while (!palin)
 	{
 		palin = palin->next;
