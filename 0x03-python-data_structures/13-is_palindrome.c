@@ -14,20 +14,24 @@ int is_palindrome(listint_t **head)
 
 	palin = *head;
 
+
+
 	if ((!*head) || (*head)->next == NULL)
 		return (1);
 
-	while (!palin)
+	while (palin)
 	{
-		palin = palin->next;
 		buff[cnt_max] = palin->n;
+		palin = palin->next;
 		cnt_max++;
 	}
-
-	while (cnt_max != cnt)
+	cnt_max--;
+	while (cnt_max < cnt)
 	{
 		if (buff[cnt_max] != buff[cnt])
 			return (0);
+		cnt_max--, cnt++;
+		
 	}
 	return (1);
 }
