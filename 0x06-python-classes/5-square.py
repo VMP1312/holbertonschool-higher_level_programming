@@ -34,4 +34,5 @@ class Square:
                 for row in range(size):
                     print("#", end="")
                 print("")
-        print("")
+        else:
+            print("")
