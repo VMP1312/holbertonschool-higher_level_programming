@@ -1,0 +1,35 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Había una vez: una araña. Con cuatro patas? De rana")
+Había una vez:
+<BLANKLINE>
+una araña.
+<BLANKLINE>
+Con cuatro patas?
+<BLANKLINE>
+De rana
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(("hola", "adios"))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> list = ["hola", "adios"]
+>>> text_indentation(list)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(("", ""))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
