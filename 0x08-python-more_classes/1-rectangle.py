@@ -5,8 +5,10 @@ Prints a rectangle
 
 
 class Rectangle:
+    """Class Rectangle"""
+
     def __init__(self, width=0, height=0):
-        """Class Rectangle"""
+        """Initialize"""
         self.width = width
         self.height = height
 
