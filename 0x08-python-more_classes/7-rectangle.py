@@ -1,15 +1,20 @@
 #!/usr/bin/python3
 """
 Prints a rectangle
-Use '#' to draw.
-Return: None
 """
 
 
-class Rectangle():
+class Rectangle:
+    """Class Rectangle"""
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
-        self.__height = height
-        self.__width = width
+        """Initialize"""
+        self.width = width
+        self.height = height
+        Rectangle.number_of_instances += 1
+        print_symbol = "#"
 
     @property
     def width(self):
@@ -49,7 +54,7 @@ class Rectangle():
             return string
         for row in range(self.height):
             for clm in range(self.width):
-                string += '#'
+                string += str(self.prints_ymbol)
             string += '\n'
         return string[:-1]
 
@@ -59,4 +64,3 @@ class Rectangle():
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
