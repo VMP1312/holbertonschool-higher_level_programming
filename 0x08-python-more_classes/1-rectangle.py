@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Prints a rectangle"""
+"""
+Prints a rectangle
+"""
 
 
 class Rectangle:
