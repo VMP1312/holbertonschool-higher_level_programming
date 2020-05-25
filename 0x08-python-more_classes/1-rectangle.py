@@ -1,26 +1,26 @@
 #!/usr/bin/python3
-"""
-Prints a rectangle
-Use '#' to draw.
-Return: None
-"""
+"""Prints a rectangle"""
 
 
 class Rectangle:
     def __init__(self, width=0, height=0):
+        """Class Rectangle"""
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """Width"""
         return self.__width
 
     @property
     def height(self):
+        """Height"""
         return self.__height
 
     @width.setter
     def width(self, value):
+        """Width setter"""
         if not(isinstance(value, int)):
             raise TypeError("width must be an integer")
         if(value < 0):
@@ -29,6 +29,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """Height setter"""
         if not(isinstance(value, int)):
             raise TypeError("height must be an integer")
         if(value < 0):
