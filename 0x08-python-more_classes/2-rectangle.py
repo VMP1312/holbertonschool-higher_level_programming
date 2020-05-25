@@ -48,4 +48,5 @@ class Rectangle:
         """Perimeter"""
         if self.width is not 0 or self.height is not 0:
             return (self.width + self.height) * 2
-        return 0
+        else:
+            return 0
