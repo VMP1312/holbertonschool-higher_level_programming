@@ -27,7 +27,7 @@ TypeError: hola must be an integer
 
 >>> BaseGeometry().integer_validator("bool", True)
 Traceback (most recent call last):
-TypeError: list must be an integer
+TypeError: bool must be an integer
 
 >>> BaseGeometry().integer_validator("adios")
 Traceback (most recent call last):
@@ -37,14 +37,14 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 Traceback (most recent call last):
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> BaseGeometry().integer_validator("my_int", None)
+>>> BaseGeometry().integer_validator("hola", None)
 Traceback (most recent call last):
-TypeError: my_int must be an integer
+TypeError: hola must be an integer
 
->>> BaseGeometry().integer_validator("my_int", {2, 1})
+>>> BaseGeometry().integer_validator("adios", {2, 1})
 Traceback (most recent call last):
-TypeError: my_int must be an integer
+TypeError: adios must be an integer
 
->>> BaseGeometry().integer_validator("my_int", (1,2))
+>>> BaseGeometry().integer_validator("hola", (1,2))
 Traceback (most recent call last):
-TypeError: my_int must be an integer
+TypeError: hola must be an integer
