@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""
-Rectangle Class
-"""
+"Rectangle class"
+
+
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Class Rectangle that inherits from Base"""
+    "Rectangle class"
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initilizate"""
+        "Rectangle class"
         super().__init__(id)
         self.width = width
         self.height = height
@@ -18,12 +18,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Width getter"""
+        "Rectangle, width getter"
         return (self.__width)
 
     @width.setter
     def width(self, value):
-        """Width setter"""
+        "Rectangle, width setter"
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value <= 0:
@@ -32,12 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Height getter"""
+        "Rectangle, height getter"
         return (self.__height)
 
     @height.setter
     def height(self, value):
-        """Height setter"""
+        "Rectangle, width setter"
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value <= 0:
@@ -46,12 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """X getter"""
+        "Rectangle, x getter"
         return (self.__x)
 
     @x.setter
     def x(self, value):
-        """X setter"""
+        "Rectangle, x setter"
         if type(value) is not int:
             raise TypeError('x must be an integer')
         if value < 0:
@@ -60,12 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Y getter"""
+        "Rectangle, y getter"
         return (self.__y)
 
     @y.setter
     def y(self, value):
-        """Y setter"""
+        "Rectangle, y setter"
         if type(value) is not int:
             raise TypeError('y must be an integer')
         if value < 0:
@@ -73,43 +73,40 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Area"""
+        "Rectangle Area"
         return (self.__width * self.__height)
 
     def display(self):
-        """Display"""
-        for y in range(self.__y):
+        "Rectangle Display"
+        for f in range(self.__y):
             print("")
-        for h in range(self.__height):
-            for x in range(self.__x):
+        for i in range(self.__height):
+            for h in range(self.__x):
                 print(" ", end="")
-            for w in range(self.__width):
+            for j in range(self.__width):
                 print("#", end="")
             print()
 
     def __str__(self):
-        """str"""
-        nm = type(self).__name__
-        idd = self.id
-        x = self.x
-        y = self.y
-        w = self.width
-        h = self.height
-        return "[{}] ({}) {}/{} - {}/{}".format(nm, idd, x, y, w, h)
+        "Rectangle __str__"
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
+                                                self.x, self.y,
+                                                self.width, self.height)
 
     def update(self, *args, **kwargs):
-        """Rectangle Update"""
-        for cnt, st in enumerate(args):
-            if cnt == 0:
-                self.id = st
-            elif cnt == 1:
-                self.width = st
-            elif cnt == 2:
-                self.height = st
-            elif cnt == 3:
-                self.x = st
-            elif cnt == 4:
-                self.y = st
+        "Rectangle Update"
+        for i, j in enumerate(args):
+            if i == 0:
+                self.id = j
+            elif i == 1:
+                self.width = j
+            elif i == 2:
+                self.height = j
+            elif i == 3:
+                self.x = j
+            elif i == 4:
+                self.y = j
+
         if args is None or len(args) == 0:
             if 'id' in kwargs:
                 self.id = kwargs['id']
