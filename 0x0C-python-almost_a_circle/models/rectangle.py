@@ -9,19 +9,12 @@ class Rectangle(Base):
     """Class Rectangle that inherits from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Constructor
-        Args:
-            width (int): width of the rectangle
-            height (int): length of the rectangle
-            x (int): position 'x' of the rectangle
-            y (int): position 'y' of the rectangle
-            id (int/None): id of the instance
-        """
-        super().__init__(id)
+        """Initilizate"""
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
