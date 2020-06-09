@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"Square class"
+"""Square class"""
 
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    "Square class"
+    """Square class"""
 
     def __init__(self, size, x=0, y=0, id=None):
         "Initializate"
@@ -15,12 +15,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        "Size"
+        """Size"""
         return (self.__width)
 
     @size.setter
     def size(self, value):
-        "Setter"
+        """Setter"""
         if not isinstance(value, int):
             raise TypeError('width must be an integer')
         elif value <= 0:
@@ -29,7 +29,7 @@ class Square(Rectangle):
         self.__height = value
 
     def __str__(self):
-        "str"
+        """str"""
         nm = type(self).__name__
         idd = self.id
         x = self.x
@@ -38,7 +38,7 @@ class Square(Rectangle):
         return "[{}] ({}) {}/{} - {}".format(nm, idd, x, y, w)
 
     def update(self, *args, **kwargs):
-        "Rectangle Update"
+        """Rectangle Update"""
         for cnt, st in enumerate(args):
             if cnt == 0:
                 self.id = st

@@ -20,14 +20,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        "To Json"
+        """To Json"""
         if list_dictionaries is None:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        "Save"
+        """Save"""
         dic = []
         if list_objs:
             for cnt in list_objs:
@@ -37,7 +37,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        "From Json"
+        """From Json"""
         if json_string is None or len(json_string) == 0:
             return []
         else:
@@ -45,7 +45,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        "Create"
+        """Create"""
         if cls.__name__ is "Rectangle":
             from models.rectangle import Rectangle
             object = Rectangle(1, 1)
@@ -57,7 +57,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        "Base Classmetohd"
+        """Base Classmetohd"""
         if not path.isfile(cls.__name__ + ".json"):
             return []
         else:

@@ -10,20 +10,20 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initilizate"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
-        "Width getter"
+        """Width getter"""
         return (self.__width)
 
     @width.setter
     def width(self, value):
-        "Width setter"
+        """Width setter"""
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value <= 0:
@@ -32,12 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        "Height getter"
+        """Height getter"""
         return (self.__height)
 
     @height.setter
     def height(self, value):
-        "Height setter"
+        """Height setter"""
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value <= 0:
@@ -46,12 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        "X getter"
+        """X getter"""
         return (self.__x)
 
     @x.setter
     def x(self, value):
-        "X setter"
+        """X setter"""
         if type(value) is not int:
             raise TypeError('x must be an integer')
         if value < 0:
@@ -60,12 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        "Y getter"
+        """Y getter"""
         return (self.__y)
 
     @y.setter
     def y(self, value):
-        "Y setter"
+        """Y setter"""
         if type(value) is not int:
             raise TypeError('y must be an integer')
         if value < 0:
@@ -73,11 +73,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        "Area"
+        """Area"""
         return (self.__width * self.__height)
 
     def display(self):
-        "Display"
+        """Display"""
         for y in range(self.__y):
             print("")
         for h in range(self.__height):
@@ -88,7 +88,7 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        "str"
+        """str"""
         nm = type(self).__name__
         idd = self.id
         x = self.x
@@ -98,7 +98,7 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(nm, idd, x, y, w, h)
 
     def update(self, *args, **kwargs):
-        "Rectangle Update"
+        """Rectangle Update"""
         for cnt, st in enumerate(args):
             if cnt == 0:
                 self.id = st
