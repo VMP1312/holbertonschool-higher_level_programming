@@ -4,13 +4,13 @@ Takes in a letter and sends a POST request with the letter as a parameter
 """
 
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == "__main__":
 
-    if len(argv) > 1:
-        data = {'q': argv[1]}
+    if len(sys.argv) > 1:
+        data = {'q': sys.argv[1]}
     else:
         data = {'q': ""}
 
