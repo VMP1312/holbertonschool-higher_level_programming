@@ -22,5 +22,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(jsn["id"], jsn["name"]))
         else:
             print("No result")
-    except NoJSON:
+    except Exception:
         print("Not a valid JSON")
