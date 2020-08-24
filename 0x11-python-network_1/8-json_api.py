@@ -9,18 +9,22 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    if len(argv) > 1:
-        data = {'q': argv[1]}
-    else:
-        data = {'q': ""}
+    if len(sys.argv) == 1:
+        let = ""
 
-    page = requests.post('http://0.0.0.0:5000/search_user', data)
+    else:
+        let = sys.argv[1]
+
+    url = 'http://0.0.0.0:5000/search_user'
+    value = {'q': let}
+
+    data = requests.post(url, value)
 
     try:
-        jsn = page.json()
+        jsn = data.json()
         if jsn:
-            print("[{}] {}".format(jsn["id"], jsn["name"]))
+            print('[{}] {}'.format(jsn['id'], jsn['name']))
         else:
-            print("No result")
-    except NoJSON:
-        print("Not a valid JSON")
+            print('No result')
+    except Exception:
+        print('Not a valid JSON')
